@@ -20,7 +20,6 @@ refs.searchBox.addEventListener(
 
 function onInputCountry(e) {
   const countryName = e.target.value.trim();
-  console.log(countryName);
 
   if (countryName.length === 0) {
     refs.countryInfo.innerHTML = '';
@@ -30,14 +29,12 @@ function onInputCountry(e) {
 
   fetchCountries(countryName)
     .then(data => {
-      console.log(data);
-
       if (data.status === 404) {
         throw new Error('Oops, there is no country with that name');
       }
 
       if (data.length > 10) {
-        Notify.warning(
+        Notify.info(
           'Too many matches found. Please enter a more specific name.'
         );
       } else if (data.length > 2 && data.length < 10) {

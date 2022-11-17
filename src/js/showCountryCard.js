@@ -4,8 +4,7 @@ export function showCountryCard(data) {
       <p>
         <img class="flag-img"
          src="${country.flags.svg}"
-         alt="${country.name.official}">
-        ${country.name.official}
+         alt="${country.name.official}">${country.name.official}
       </p>
       <p><b>Capital: </b>${country.capital[0]}</p>
       <p><b>Population: </b>${country.population}</p>
